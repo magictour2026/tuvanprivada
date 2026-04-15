@@ -1,87 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tuvanprivada.cl - MagicTour.spa</title>
-    <style>
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; color: #333; background-color: #f4f7f6; }
-        
-        /* BARRA SUPERIOR */
-        .navbar { background: white; padding: 10px; display: flex; align-items: center; justify-content: center; border-bottom: 2px solid #0a1f44; sticky; top: 0; z-index: 1000; }
-        .navbar img { height: 45px; margin-right: 10px; }
-        .navbar h2 { margin: 0; color: #0a1f44; font-size: 1.2em; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Van Privada</title>
 
-        /* HERO: AJUSTADO PARA CELULAR */
-        .hero { 
-            background: linear-gradient(rgba(10, 31, 68, 0.75), rgba(10, 31, 68, 0.75)), url('van1.jpg'); 
-            background-size: cover; background-position: center; height: 60vh; 
-            display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 15px;
-        }
-        .hero h1 { font-size: 2.2em; margin: 0; color: #25D366; text-transform: lowercase; } /* Bajamos el tamaño para que no se corte */
-        .hero p { font-size: 1.1em; margin-top: 10px; font-weight: 300; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        /* SERVICIOS */
-        .services { padding: 40px 15px; max-width: 1000px; margin: auto; }
-        .services h3 { text-align: center; color: #0a1f44; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
-        .card h4 { color: #0a1f44; margin-bottom: 5px; }
+<style>
 
-        /* BOTONES DE CONTACTO FLOTANTES (MÁS A LA MANO) */
-        .floating-contact { 
-            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); 
-            display: flex; gap: 10px; z-index: 9999; width: 90%; max-width: 400px;
-        }
-        .btn-float { 
-            flex: 1; text-decoration: none; color: white; padding: 12px; border-radius: 50px; 
-            text-align: center; font-weight: bold; font-size: 0.9em; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .f-whatsapp { background-color: #25D366; }
-        .f-email { background-color: #0a1f44; }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+}
 
-        /* GALERÍA */
-        .gallery { padding: 20px; text-align: center; margin-bottom: 80px; }
-        .img-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-        .img-row img { width: 45%; border-radius: 8px; object-fit: cover; height: 120px; }
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 1.8em; } /* Más pequeño aún en pantallas mini */
-        }
-    </style>
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    border-radius: 10px;
+}
+
+.logo h1 {
+    margin-left: 15px;
+    font-size: 20px;
+    color: #0a1f44;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0a1f44;
+    font-weight: 500;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('van1.jpg') no-repeat center/cover;
+    height: 90vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* BOTONES */
+.btn {
+    background: #25D366;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* BOTÓN CORREO */
+.btn-email {
+    background: #007BFF;
+}
+
+/* CONTENEDOR BOTONES */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* SECCIONES */
+.section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* SERVICIOS */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* GALERÍA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #0a1f44;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* WHATSAPP FLOTANTE */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="navbar">
-        <img src="logo.jpg" alt="Logo">
-        <h2>magictour.spa</h2>
+<header>
+    <div class="logo">
+        <img src="logo.jpg">
+        <h1>Tu Van Privada</h1>
     </div>
 
-    <div class="hero">
-        <h1>tuvanprivada.cl</h1>
-        <p>Transporte Privado de Primer Nivel</p>
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Vehículo</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Traslados Premium en Hyundai Staria</h1>
+    <p>Viaja cómodo, seguro y puntual</p>
+
+    <div class="btn-group">
+        <a class="btn" href="https://wa.me/56982194820?text=Hola%20quiero%20reservar%20un%20servicio">
+            WhatsApp
+        </a>
+
+        <a class="btn btn-email" href="mailto:Magic.tourism.chile@gmail.com?subject=Cotización%20de%20servicio&body=Hola,%20quiero%20cotizar%20un%20traslado.%20Detalles:%20">
+            Cotizar por correo
+        </a>
     </div>
+</section>
+
+<section id="servicios" class="section">
+    <h2>Nuestros Servicios</h2>
 
     <div class="services">
-        <h3>Nuestros Servicios</h3>
-        <div class="grid">
-            <div class="card"><h4>✈️ Aeropuerto</h4><p>Traslados ida y vuelta.</p></div>
-            <div class="card"><h4>🍷 Viñedos</h4><p>Tours privados y cómodos.</p></div>
-            <div class="card"><h4>🏖️ Playas</h4><p>Litoral central y eventos.</p></div>
+        <div class="card">
+            <h3>✈️ Aeropuerto</h3>
+            <p>Servicio puntual con monitoreo de vuelos.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎉 Eventos</h3>
+            <p>Matrimonios, empresas y celebraciones.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍇 Viñedos</h3>
+            <p>Experiencias privadas y seguras.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌊 Playa</h3>
+            <p>Viajes cómodos ida y vuelta.</p>
         </div>
     </div>
+</section>
+
+<section id="galeria" class="section">
+    <h2>Nuestro Vehículo</h2>
 
     <div class="gallery">
-        <div class="img-row">
-            <img src="van2.jpg" alt="Interior">
-            <img src="van3.jpg" alt="Exterior">
-        </div>
+        <img src="van1.jpg">
+        <img src="van2.jpg">
+        <img src="van3.jpg">
     </div>
+</section>
 
-    <div class="floating-contact">
-        <a href="https://wa.me/56982194820" class="btn-float f-whatsapp">WhatsApp</a>
-        <a href="mailto:magictour.spa@gmail.com" class="btn-float f-email">Enviar Correo</a>
+<section class="section">
+    <h2>Cotiza tu viaje</h2>
+    <p>Elige cómo quieres contactarnos</p>
+
+    <div class="btn-group">
+        <a class="btn" href="https://wa.me/56982194820?text=Hola%20quiero%20cotizar%20un%20viaje">
+            Cotizar por WhatsApp
+        </a>
+
+        <a class="btn btn-email" href="mailto:Magic.tourism.chile@gmail.com?subject=Cotización%20de%20servicio&body=Hola,%20quiero%20cotizar%20un%20traslado.%20Detalles:%20">
+            Cotizar por correo
+        </a>
     </div>
+</section>
+
+<section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <p>📱 WhatsApp: +56 9 8219 4820</p>
+    <p>📍 Santiago, Chile</p>
+</section>
+
+<footer>
+    <p>© 2026 Tu Van Privada</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/56982194820">💬</a>
 
 </body>
 </html>
